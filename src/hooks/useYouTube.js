@@ -7,7 +7,7 @@ export default () => {
   const [recentVideos, setRecentVideos] = useState([])
   const [errorMessage, setErrorMessage] = useState('')
 
-  const API_KEY = 'AIzaSyA3G1XEBwZZd03RyQTbHiW8XMxrRortVhE'
+  const API_KEY = 'AIzaSyC2fTy9lCkQwmdMqVHLGqfpH3k3mKEyJ24'
   const channelId = 'UCNjybtMYeMfwur19Gd5GvRg'
   const newPlaylistId = 'PLmZdmstRazmj2tsgHzGLDiPeW2eac1h6v'
   const popularPlaylistId = 'PLmZdmstRazmgX7l9ox3krdNioKfGrSpQ-'

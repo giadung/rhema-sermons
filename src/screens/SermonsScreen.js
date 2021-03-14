@@ -3,8 +3,10 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import SearchBar from '../components/SearchBar'
 import VideosList from '../components/VideosList'
 import useYouTube from '../hooks/useYouTube'
+import NewVideo from '../components/NewVideo'
 
-const SermonsScreen = () => {
+const SermonsScreen = ({ navigation }) => {
+  // console.log(props)
   const [term, setTerm] = useState('')
   const [
     searchVideos,
@@ -26,7 +28,13 @@ const SermonsScreen = () => {
         onTermSubmit={() => searchVideos(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <ScrollView style={{ marginTop: 10 }}>
+      <ScrollView>
+        <NewVideo
+          videoId='FY2pEqb5GH8'
+          title='THE STORM - PART 1 LEARNING THE STORMS'
+          description='The Rhema Experience Online'
+          imageUrl='https://j.gifs.com/BNz5y2.gif'
+        />
         <VideosList title='Popular Sermons' videos={popularVideos} />
         <VideosList title='Recent Sermons' videos={recentVideos} />
       </ScrollView>
@@ -36,7 +44,7 @@ const SermonsScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
     flex: 1
   }
 })

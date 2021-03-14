@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   description: {
     color: 'grey',
-    fontSize: 12,
+    fontSize: 13,
     maxWidth: 250
   }
 })

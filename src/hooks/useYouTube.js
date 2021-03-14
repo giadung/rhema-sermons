@@ -27,6 +27,7 @@ export default () => {
         }
       })
       setResults(response.data.items)
+      console.log(results)
     } catch (err) {
       setErrorMessage('Something went wrong')
     }

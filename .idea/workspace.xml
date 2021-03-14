@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fe4296b3-f37f-4586-a8b1-8f32f87b0254" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/DiscoverDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DiscoverDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigations/TopSermonsNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigations/TopSermonsNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/DiscoverScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/DiscoverScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/sermons/AudioScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/sermons/AudioScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/sermons/LiveScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/sermons/LiveScreen.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1r4zKaNFxQQwYjbQXAYygw8DbsJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe4296b3-f37f-4586-a8b1-8f32f87b0254" name="Default Changelist" comment="" />
+      <created>1618250091704</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618250091704</updated>
+    </task>
+    <servers />
+  </component>
+</project>

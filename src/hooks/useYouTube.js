@@ -1,12 +1,6 @@
+import { CHANNEL_ID, YOUTUBE_API_KEY } from '@env'
 import { useEffect, useState } from 'react'
 import youtube from '../api/youtube'
-import {
-  YOUTUBE_API_KEY,
-  CHANNEL_ID,
-  NEW_PLAYLIST_ID,
-  POPULAR_PLAYLIST_ID,
-  RECENT_PLAYLIST_ID
-} from '@env'
 
 export default () => {
   const [results, setResults] = useState([])
@@ -46,7 +40,7 @@ export default () => {
           publishedAfter: '2021-01-01T00:00:00Z'
         }
       })
-      setResults(response.data.items)
+      setPopularVideos(response.data.items)
     } catch (err) {
       setErrorMessage('Something went wrong')
     }
@@ -66,7 +60,7 @@ export default () => {
           publishedAfter: '2021-01-01T00:00:00Z'
         }
       })
-      setResults(response.data.items)
+      setRecentVideos(response.data.items)
     } catch (err) {
       setErrorMessage('Something went wrong')
     }

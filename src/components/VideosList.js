@@ -9,7 +9,7 @@ import {
 import { withNavigation } from 'react-navigation'
 import VideoDetail from './VideoDetail'
 
-const VideosList = ({ title, videos, navigation, horizontal }) => {
+const VideosList = ({ title, videos, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>

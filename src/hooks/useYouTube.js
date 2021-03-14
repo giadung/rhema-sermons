@@ -1,6 +1,12 @@
-import { CHANNEL_ID, YOUTUBE_API_KEY } from '@env'
 import { useEffect, useState } from 'react'
 import youtube from '../api/youtube'
+import {
+  YOUTUBE_API_KEY,
+  CHANNEL_ID,
+  NEW_PLAYLIST_ID,
+  POPULAR_PLAYLIST_ID,
+  RECENT_PLAYLIST_ID
+} from '@env'
 
 export default () => {
   const [results, setResults] = useState([])
@@ -9,7 +15,7 @@ export default () => {
   const [errorMessage, setErrorMessage] = useState('')
 
   const searchVideos = async (searchTerm) => {
-    console.log('searchVideos is called')
+    console.log('Search is called!')
     try {
       const response = await youtube.get('/search', {
         params: {
@@ -26,79 +32,59 @@ export default () => {
     }
   }
 
+  // const getPopularVideos = async (searchTerm) => {
+  //   console.log('getPopularVideos is called!')
+  //   try {
+  //     const response = await youtube.get('/search', {
+  //       params: {
+  //         key: YOUTUBE_API_KEY,
+  //         channelId: CHANNEL_ID,
+  //         part: 'snippet',
+  //         maxResults: 10,
+  //         q: searchTerm,
+  //         order: 'viewCount',
+  //         publishedAfter: '2021-01-01T00:00:00Z'
+  //       }
+  //     })
+  //     setResults(response.data.items)
+  //   } catch (err) {
+  //     setErrorMessage('Something went wrong')
+  //   }
+  // }
+
   const getPopularVideos = async () => {
-    console.log('getPopularVideos is called')
+    console.log('getPopularVideos is called!')
     try {
-      const response = await youtube.get('/search', {
+      const response = await youtube.get('/playlistItems', {
         params: {
           key: YOUTUBE_API_KEY,
-          channelId: CHANNEL_ID,
           part: 'snippet',
-          maxResults: 10,
-          q: searchTerm,
-          order: 'viewCount',
-          publishedAfter: '2021-01-01T00:00:00Z'
+          playlistId: POPULAR_PLAYLIST_ID,
+          maxResults: 10
         }
       })
       setPopularVideos(response.data.items)
     } catch (err) {
-      setErrorMessage('Something went wrong')
+      setErrorMessage('Cannot find popular videos')
     }
   }
 
   const getRecentVideos = async () => {
-    console.log('getRecentVideos is called')
+    console.log('getRecentVideos is called! ')
     try {
-      const response = await youtube.get('/search', {
+      const response = await youtube.get('/playlistItems', {
         params: {
           key: YOUTUBE_API_KEY,
-          channelId: CHANNEL_ID,
           part: 'snippet',
-          maxResults: 10,
-          q: searchTerm,
-          order: 'date',
-          publishedAfter: '2021-01-01T00:00:00Z'
+          playlistId: RECENT_PLAYLIST_ID,
+          maxResults: 10
         }
       })
       setRecentVideos(response.data.items)
     } catch (err) {
-      setErrorMessage('Something went wrong')
+      setErrorMessage('Cannot find recent videos')
     }
   }
-
-  // const getPopularVideos = async () => {
-  //   console.log('popular is called!')
-  //   try {
-  //     const response = await youtube.get('/playlistItems', {
-  //       params: {
-  //         key: YOUTUBE_API_KEY,
-  //         part: 'snippet',
-  //         playlistId: POPULAR_PLAYLIST_ID,
-  //         maxResults: 10
-  //       }
-  //     })
-  //     setPopularVideos(response.data.items)
-  //   } catch (err) {
-  //     setErrorMessage('Cannot find popular videos')
-  //   }
-  // }
-
-  // const getRecentVideos = async () => {
-  //   console.log('recent is called! ')
-  //   try {
-  //     const response = await youtube.get('/playlistItems', {
-  //       params: {
-  //         key: YOUTUBE_API_KEY,
-  //         part: 'snippet',
-  //         playlistId: RECENT_PLAYLIST_ID,
-  //         maxResults: 10
-  //       }
-  //     })
-  //     setRecentVideos(response.data.items)
-  //   } catch (err) {
-  //     setErrorMessage('Cannot find recent videos')
-  //   }
-  // }
 
   // Call searchVideos when component
   // is first called.

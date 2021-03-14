@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   FlatList,
   StyleSheet,
@@ -9,7 +9,7 @@ import {
 import { withNavigation } from 'react-navigation'
 import VideoDetail from './VideoDetail'
 
-const VideosList = ({ title, videos, navigation }) => {
+const VideosList = ({ title, videos, navigation, horizontal }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -24,9 +24,11 @@ const VideosList = ({ title, videos, navigation }) => {
               onPress={
                 () =>
                   navigation.navigate('Video', {
-                    id: item.snippet.resourceId.videoId
+                    id: item.snippet.resourceId.videoId,
+                    title: item.snippet.title,
+                    description: item.snippet.description
                   })
-                // console.log(item.snippet.resourceId.videoId)
+                // console.log(item.snippet.description)
               }
             >
               <VideoDetail video={item} />
@@ -40,7 +42,8 @@ const VideosList = ({ title, videos, navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20
+    marginBottom: 20,
+    flex: 1
   },
   title: {
     marginLeft: 15,

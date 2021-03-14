@@ -1,37 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
+import React from 'react'
 import {
-  Text,
-  View,
+  Linking,
   Platform,
   StyleSheet,
+  Text,
   TouchableHighlight,
-  Image
+  View
 } from 'react-native'
-import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons'
 import { WebView } from 'react-native-webview'
-import youtube from '../api/youtube'
 
 const VideoScreen = ({ navigation }) => {
   const videoId = navigation.getParam('id')
-  // const [video, setVideo] = useState(null)
-
-  // const API_KEY = 'AIzaSyA3G1XEBwZZd03RyQTbHiW8XMxrRortVhE'
-
-  // const getVideo = async (videoId) => {
-  //   const response = await youtube.get('/videos', {
-  //     params: {
-  //       part: 'snippet',
-  //       id: videoId,
-  //       key: API_KEY
-  //     }
-  //   })
-  //   setVideo(response.data.items)
-  //   console.log(video)
-  // }
-
-  // useEffect(() => {
-  //   getVideo(videoId)
-  // }, [])
+  const videoTitle = navigation.getParam('title')
+  const videoDescription = navigation.getParam('description')
 
   const html =
     '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
@@ -62,22 +44,16 @@ const VideoScreen = ({ navigation }) => {
         />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>Non est ista, inquam, Piso</Text>
-        <Text style={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo studio
-          cum satiari non possint, omnium ceterarum rerum obliti níhil abiectum,
-          nihil humile cogitant; Ea possunt paria non esse.{'\n'}
-          {'\n'} Quid igitur dubitamus in tota eius natura quaerere quid sit
-          effectum? In qua si nihil est praeter rationem, sit in una virtute
-          finis bonorum; Frater et T. Non est ista, inquam, Piso, magna
-          dissensio. Illud urgueam, non intellegere eum quid sibi dicendum sit,
-          cum dolorem summum malum esse dixerit. Illi enim inter se dissentiunt.
-          Duo Reges: constructio interrete. Quis Aristidem non mortuum diligit?
-          Quae contraria sunt his, malane?
-        </Text>
+        <Text style={styles.title}>{videoTitle}</Text>
+        <Text style={styles.description}>{videoDescription}</Text>
         <View style={styles.buttonWrapper}>
           <View style={styles.button}>
-            <TouchableHighlight style={styles.iconContainer}>
+            <TouchableHighlight
+              style={styles.iconContainer}
+              onPress={() => {
+                Linking.openURL('https://google.com')
+              }}
+            >
               <Ionicons
                 style={styles.icon}
                 name='notifications-outline'
@@ -88,13 +64,23 @@ const VideoScreen = ({ navigation }) => {
             <Text style={styles.buttonText}>Subcribe</Text>
           </View>
           <View style={styles.button}>
-            <TouchableHighlight style={styles.iconContainer}>
+            <TouchableHighlight
+              style={styles.iconContainer}
+              onPress={() => {
+                Linking.openURL('https://google.com')
+              }}
+            >
               <Feather name='play' size={24} color='black' />
             </TouchableHighlight>
             <Text style={styles.buttonText}>Listen</Text>
           </View>
           <View style={styles.button}>
-            <TouchableHighlight style={styles.iconContainer}>
+            <TouchableHighlight
+              style={styles.iconContainer}
+              onPress={() => {
+                Linking.openURL('https://google.com')
+              }}
+            >
               <MaterialCommunityIcons
                 name='share-outline'
                 size={24}

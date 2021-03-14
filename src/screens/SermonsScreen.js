@@ -5,7 +5,7 @@ import VideosList from '../components/VideosList'
 import useYouTube from '../hooks/useYouTube'
 import NewVideo from '../components/NewVideo'
 
-const SermonsScreen = ({ navigation }) => {
+const SermonsScreen = () => {
   // console.log(props)
   const [term, setTerm] = useState('')
   const [

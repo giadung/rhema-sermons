@@ -16,7 +16,9 @@ const NewVideo = ({ videoId, title, description, imageUrl, navigation }) => {
     <TouchableOpacity
       onPress={() =>
         navigation.navigate('Video', {
-          id: videoId
+          id: videoId,
+          title: title,
+          description: description
         })
       }
     >

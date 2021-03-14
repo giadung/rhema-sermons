@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   View
 } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 import { WebView } from 'react-native-webview'
 
 const VideoScreen = ({ navigation }) => {
@@ -43,54 +44,56 @@ const VideoScreen = ({ navigation }) => {
           userAgent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
         />
       </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{videoTitle}</Text>
-        <Text style={styles.description}>{videoDescription}</Text>
-        <View style={styles.buttonWrapper}>
-          <View style={styles.button}>
-            <TouchableHighlight
-              style={styles.iconContainer}
-              onPress={() => {
-                Linking.openURL('https://google.com')
-              }}
-            >
-              <Ionicons
-                style={styles.icon}
-                name='notifications-outline'
-                size={24}
-                color='black'
-              />
-            </TouchableHighlight>
-            <Text style={styles.buttonText}>Subcribe</Text>
-          </View>
-          <View style={styles.button}>
-            <TouchableHighlight
-              style={styles.iconContainer}
-              onPress={() => {
-                Linking.openURL('https://google.com')
-              }}
-            >
-              <Feather name='play' size={24} color='black' />
-            </TouchableHighlight>
-            <Text style={styles.buttonText}>Listen</Text>
-          </View>
-          <View style={styles.button}>
-            <TouchableHighlight
-              style={styles.iconContainer}
-              onPress={() => {
-                Linking.openURL('https://google.com')
-              }}
-            >
-              <MaterialCommunityIcons
-                name='share-outline'
-                size={24}
-                color='black'
-              />
-            </TouchableHighlight>
-            <Text style={styles.buttonText}>Share</Text>
+      <ScrollView>
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>{videoTitle}</Text>
+          <Text style={styles.description}>{videoDescription}</Text>
+          <View style={styles.buttonWrapper}>
+            <View style={styles.button}>
+              <TouchableHighlight
+                style={styles.iconContainer}
+                onPress={() => {
+                  Linking.openURL('https://google.com')
+                }}
+              >
+                <Ionicons
+                  style={styles.icon}
+                  name='notifications-outline'
+                  size={24}
+                  color='black'
+                />
+              </TouchableHighlight>
+              <Text style={styles.buttonText}>Subcribe</Text>
+            </View>
+            <View style={styles.button}>
+              <TouchableHighlight
+                style={styles.iconContainer}
+                onPress={() => {
+                  Linking.openURL('https://google.com')
+                }}
+              >
+                <Feather name='play' size={24} color='black' />
+              </TouchableHighlight>
+              <Text style={styles.buttonText}>Listen</Text>
+            </View>
+            <View style={styles.button}>
+              <TouchableHighlight
+                style={styles.iconContainer}
+                onPress={() => {
+                  Linking.openURL('https://google.com')
+                }}
+              >
+                <MaterialCommunityIcons
+                  name='share-outline'
+                  size={24}
+                  color='black'
+                />
+              </TouchableHighlight>
+              <Text style={styles.buttonText}>Share</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   )
 }
@@ -101,16 +104,15 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     marginTop: 20,
-    marginHorizontal: 15,
+    marginHorizontal: 25,
     flex: 1
   },
   title: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 5
   },
   description: {
-    fontSize: 13,
     color: 'grey',
     marginBottom: 25
   },
@@ -127,7 +129,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-around',
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    marginBottom: 50
   },
   button: {
     alignItems: 'center'

@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     height: 220
   },
   textContainer: {
-    marginTop: 20,
+    marginTop: 25,
     marginHorizontal: 25,
     flex: 1
   },

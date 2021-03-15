@@ -27,7 +27,7 @@ export default () => {
         }
       })
       setResults(response.data.items)
-      console.log(results)
+      // console.log(results)
     } catch (err) {
       setErrorMessage('Something went wrong')
     }
@@ -49,7 +49,7 @@ export default () => {
       })
       setPopularVideos(response.data.items)
     } catch (err) {
-      setErrorMessage('Something went wrong')
+      setErrorMessage('Cannot find popular videos')
     }
   }
 
@@ -69,7 +69,7 @@ export default () => {
       })
       setRecentVideos(response.data.items)
     } catch (err) {
-      setErrorMessage('Something went wrong')
+      setErrorMessage('Cannot find recent videos')
     }
   }
 

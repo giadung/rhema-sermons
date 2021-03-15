@@ -28,6 +28,7 @@ const SermonsScreen = () => {
         onTermSubmit={() => searchVideos(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
+
       <ScrollView>
         <NewVideo
           videoId='FY2pEqb5GH8'
@@ -36,6 +37,9 @@ const SermonsScreen = () => {
           publishedAt='2021-03-07'
           imageUrl='https://j.gifs.com/BNz5y2.gif'
         />
+        {results ? (
+          <VideosList title='Search Results' videos={results} />
+        ) : null}
         <VideosList title='Popular Sermons' videos={popularVideos} />
         <VideosList title='Recent Sermons' videos={recentVideos} />
       </ScrollView>

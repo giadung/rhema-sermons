@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     textTransform: 'uppercase',
     borderRadius: 100,
-    overflow: 'hidden',
     marginBottom: 5
   },
   title: {

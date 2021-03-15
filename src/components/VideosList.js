@@ -17,18 +17,19 @@ const VideosList = ({ title, videos, navigation }) => {
         horizontal
         showsHorizontalScrollIndicator={false}
         data={videos}
-        keyExtractor={(video) => video.snippet.resourceId.videoId}
+        keyExtractor={(video) => video.id.videoId}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
               onPress={
                 () =>
                   navigation.navigate('Video', {
-                    id: item.snippet.resourceId.videoId,
+                    id: item.id.videoId,
                     title: item.snippet.title,
+                    publishedAt: item.snippet.publishedAt,
                     description: item.snippet.description
                   })
-                // console.log(item.snippet.description)
+                // console.log(item.snippet.publishedAt)
               }
             >
               <VideoDetail video={item} />

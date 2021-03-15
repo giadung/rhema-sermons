@@ -14,7 +14,12 @@ import { WebView } from 'react-native-webview'
 const VideoScreen = ({ navigation }) => {
   const videoId = navigation.getParam('id')
   const videoTitle = navigation.getParam('title')
+  const publishedAt = navigation.getParam('publishedAt')
   const videoDescription = navigation.getParam('description')
+
+  console.log(videoDescription)
+
+  const publishedDate = publishedAt.substring(0, 10)
 
   // const html =
   //   '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
@@ -52,6 +57,7 @@ const VideoScreen = ({ navigation }) => {
       <ScrollView>
         <View style={styles.textContainer}>
           <Text style={styles.title}>{videoTitle}</Text>
+          <Text style={styles.date}>Published on: {publishedDate}</Text>
           <Text style={styles.description}>{videoDescription}</Text>
           <View style={styles.buttonWrapper}>
             <View style={styles.button}>
@@ -116,6 +122,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 5
+  },
+  date: {
+    color: 'grey',
+    marginBottom: 15
   },
   description: {
     color: 'grey',

@@ -33,59 +33,79 @@ export default () => {
     }
   }
 
-  // const getPopularVideos = async (searchTerm) => {
-  //   console.log('getPopularVideos is called!')
-  //   try {
-  //     const response = await youtube.get('/search', {
-  //       params: {
-  //         key: YOUTUBE_API_KEY,
-  //         channelId: CHANNEL_ID,
-  //         part: 'snippet',
-  //         maxResults: 10,
-  //         q: searchTerm,
-  //         order: 'viewCount',
-  //         publishedAfter: '2021-01-01T00:00:00Z'
-  //       }
-  //     })
-  //     setResults(response.data.items)
-  //   } catch (err) {
-  //     setErrorMessage('Something went wrong')
-  //   }
-  // }
-
-  const getPopularVideos = async () => {
+  const getPopularVideos = async (searchTerm) => {
     console.log('getPopularVideos is called!')
     try {
-      const response = await youtube.get('/playlistItems', {
+      const response = await youtube.get('/search', {
         params: {
           key: YOUTUBE_API_KEY,
+          channelId: CHANNEL_ID,
           part: 'snippet',
-          playlistId: POPULAR_PLAYLIST_ID,
-          maxResults: 10
+          maxResults: 10,
+          q: searchTerm,
+          order: 'viewCount',
+          publishedAfter: '2021-01-01T00:00:00Z'
         }
       })
       setPopularVideos(response.data.items)
     } catch (err) {
-      setErrorMessage('Cannot find popular videos')
+      setErrorMessage('Something went wrong')
     }
   }
 
-  const getRecentVideos = async () => {
-    console.log('getRecentVideos is called! ')
+  const getRecentVideos = async (searchTerm) => {
+    console.log('getPopularVideos is called!')
     try {
-      const response = await youtube.get('/playlistItems', {
+      const response = await youtube.get('/search', {
         params: {
           key: YOUTUBE_API_KEY,
+          channelId: CHANNEL_ID,
           part: 'snippet',
-          playlistId: RECENT_PLAYLIST_ID,
-          maxResults: 10
+          maxResults: 10,
+          q: searchTerm,
+          order: 'date',
+          publishedAfter: '2021-01-01T00:00:00Z'
         }
       })
       setRecentVideos(response.data.items)
     } catch (err) {
-      setErrorMessage('Cannot find recent videos')
+      setErrorMessage('Something went wrong')
     }
   }
+
+  // const getPopularVideos = async () => {
+  //   console.log('getPopularVideos is called!')
+  //   try {
+  //     const response = await youtube.get('/playlistItems', {
+  //       params: {
+  //         key: YOUTUBE_API_KEY,
+  //         part: 'snippet',
+  //         playlistId: POPULAR_PLAYLIST_ID,
+  //         maxResults: 10
+  //       }
+  //     })
+  //     setPopularVideos(response.data.items)
+  //   } catch (err) {
+  //     setErrorMessage('Cannot find popular videos')
+  //   }
+  // }
+
+  // const getRecentVideos = async () => {
+  //   console.log('getRecentVideos is called! ')
+  //   try {
+  //     const response = await youtube.get('/playlistItems', {
+  //       params: {
+  //         key: YOUTUBE_API_KEY,
+  //         part: 'snippet',
+  //         playlistId: RECENT_PLAYLIST_ID,
+  //         maxResults: 10
+  //       }
+  //     })
+  //     setRecentVideos(response.data.items)
+  //   } catch (err) {
+  //     setErrorMessage('Cannot find recent videos')
+  //   }
+  // }
 
   // Call searchVideos when component
   // is first called.

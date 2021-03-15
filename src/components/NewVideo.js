@@ -25,11 +25,8 @@ const NewVideo = ({ videoId, title, description, imageUrl, navigation }) => {
       <View style={styles.container}>
         <View style={styles.imageCover}>
           <View style={styles.textContanier}>
-            <Text style={styles.newText}>New</Text>
-            <Text style={styles.title}>
-              {/* THE STORM - PART 1{'\n'}LEARNING THE STORMS */}
-              {title}
-            </Text>
+            <Text style={styles.newText}>Featured</Text>
+            <Text style={styles.title}>{title}</Text>
             <Text style={styles.description}>{description}</Text>
           </View>
         </View>
@@ -41,27 +38,6 @@ const NewVideo = ({ videoId, title, description, imageUrl, navigation }) => {
             overlayColor: '#fff'
           }}
         />
-        {/* <Video
-            source={{ uri: 'https://i.imgur.com/j020nsG.mp4' }}
-            resizeMode='cover'
-            shouldPlay
-            isLooping
-            useNativeControls={false}
-            style={{ borderRadius: 16, flex: 1, zIndex: 1 }}
-          /> */}
-        {/* <WebView
-          source={{
-            html:
-              "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/FY2pEqb5GH8?&autoplay=1&loop=1&contols=0&t=60' frameborder='0' allow='autoplay;' ></iframe>"
-          }}
-          style={{ borderRadius: 16 }}
-          mediaPlaybackRequiresUserAction={
-            Platform.OS !== 'android' || Platform.Version >= 17
-              ? false
-              : undefined
-          }
-          userAgent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-        /> */}
       </View>
     </TouchableOpacity>
   )
@@ -96,7 +72,7 @@ const styles = StyleSheet.create({
   },
   newText: {
     backgroundColor: '#F75925',
-    width: 54,
+    width: 92,
     height: 28,
     textAlign: 'center',
     textAlignVertical: 'center',

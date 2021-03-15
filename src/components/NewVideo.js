@@ -11,13 +11,21 @@ import { withNavigation } from 'react-navigation'
 import { Video } from 'expo-av'
 import { WebView } from 'react-native-webview'
 
-const NewVideo = ({ videoId, title, description, imageUrl, navigation }) => {
+const NewVideo = ({
+  videoId,
+  title,
+  publishedAt,
+  description,
+  imageUrl,
+  navigation
+}) => {
   return (
     <TouchableOpacity
       onPress={() =>
         navigation.navigate('Video', {
           id: videoId,
           title: title,
+          publishedAt: publishedAt,
           description: description
         })
       }

@@ -33,6 +33,7 @@ const SermonsScreen = () => {
           videoId='FY2pEqb5GH8'
           title='THE STORM - PART 1 LEARNING THE STORMS'
           description='The Rhema Experience Online'
+          publishedAt='2021-03-07'
           imageUrl='https://j.gifs.com/BNz5y2.gif'
         />
         <VideosList title='Popular Sermons' videos={popularVideos} />

@@ -17,7 +17,7 @@ const VideoScreen = ({ navigation }) => {
   const publishedAt = navigation.getParam('publishedAt')
   const videoDescription = navigation.getParam('description')
 
-  console.log(videoDescription)
+  // console.log(videoDescription)
 
   const publishedDate = publishedAt.substring(0, 10)
 

@@ -144,8 +144,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'flex-start',
-    justifyContent: 'space-around',
-    marginHorizontal: 15,
+    justifyContent: 'space-between',
+    marginHorizontal: 25,
     marginBottom: 50
   },
   button: {

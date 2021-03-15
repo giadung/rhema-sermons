@@ -16,11 +16,16 @@ const VideoScreen = ({ navigation }) => {
   const videoTitle = navigation.getParam('title')
   const videoDescription = navigation.getParam('description')
 
+  // const html =
+  //   '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
+  //   '<div style="display: flex; justify-content: center; align-items: center; height: 100%"><div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">' +
+  //   `<iframe width="560" height="315" src='https://www.youtube.com/embed/${videoId}?&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
+  //   '</div></div>' +
+  //   '</body></html>'
+
   const html =
     '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
-    '<div style="display: flex; justify-content: center; align-items: center; height: 100%"><div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">' +
-    `<iframe width="560" height="315" src='https://www.youtube.com/embed/${videoId}?&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
-    '</div></div>' +
+    `<iframe src='https://www.youtube.com/embed/${videoId}?&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
     '</body></html>'
 
   return (
@@ -29,7 +34,7 @@ const VideoScreen = ({ navigation }) => {
         <WebView
           style={{ resizeMode: 'cover', flex: 1 }}
           allowsFullscreenVideo
-          scalesPageToFit={true}
+          // scalesPageToFit={true}
           // allowsInlineMediaPlayback
           // mediaPlaybackRequiresUserAction
           source={{
@@ -100,7 +105,7 @@ const VideoScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   videoContainer: {
-    height: 225
+    height: 220
   },
   textContainer: {
     marginTop: 20,

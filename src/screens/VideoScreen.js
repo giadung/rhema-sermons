@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 100,
+    marginBottom: 5,
     alignItems: 'center',
     justifyContent: 'space-around'
   },

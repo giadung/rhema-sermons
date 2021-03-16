@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import SearchBar from '../components/SearchBar'
-import VideosList from '../components/VideosList'
+import HVideosList from '../components/HVideosList'
+import VVideosList from '../components/VVideosList'
 import useYouTube from '../hooks/useYouTube'
 import NewVideo from '../components/NewVideo'
 
@@ -29,20 +30,23 @@ const SermonsScreen = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
 
-      <ScrollView>
-        <NewVideo
-          videoId='FY2pEqb5GH8'
-          title='THE STORM - PART 1 LEARNING THE STORMS'
-          description='The Rhema Experience Online'
-          publishedAt='2021-03-07'
-          imageUrl='https://j.gifs.com/BNz5y2.gif'
-        />
-        {results ? (
-          <VideosList title='Search Results' videos={results} />
-        ) : null}
-        <VideosList title='Popular Sermons' videos={popularVideos} />
-        <VideosList title='Recent Sermons' videos={recentVideos} />
-      </ScrollView>
+      {!results || term === '' ? (
+        <ScrollView>
+          <NewVideo
+            videoId='FY2pEqb5GH8'
+            title='THE STORM - PART 1 LEARNING THE STORMS'
+            description='The Rhema Experience Online'
+            publishedAt='2021-03-07'
+            imageUrl='https://j.gifs.com/BNz5y2.gif'
+          />
+          <HVideosList title='Popular Sermons' videos={popularVideos} />
+          <HVideosList title='Recent Sermons' videos={recentVideos} />
+        </ScrollView>
+      ) : (
+        <>
+          <VVideosList title='Search Results' videos={results} />
+        </>
+      )}
     </View>
   )
 }

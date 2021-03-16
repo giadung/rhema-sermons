@@ -7,15 +7,13 @@ import {
   View
 } from 'react-native'
 import { withNavigation } from 'react-navigation'
-import VideoDetail from './VideoDetail'
+import VVideoDetail from './VVideoDetail'
 
 const VideosList = ({ title, videos, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
         data={videos}
         keyExtractor={(video) => video.id.videoId}
         renderItem={({ item }) => {
@@ -32,7 +30,7 @@ const VideosList = ({ title, videos, navigation }) => {
                 // console.log(item.snippet.publishedAt)
               }
             >
-              <VideoDetail video={item} />
+              <VVideoDetail video={item} />
             </TouchableOpacity>
           )
         }}
@@ -43,7 +41,6 @@ const VideosList = ({ title, videos, navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
     flex: 1
   },
   title: {

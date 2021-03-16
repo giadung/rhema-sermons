@@ -23,7 +23,8 @@ export default () => {
           channelId: CHANNEL_ID,
           part: 'snippet',
           maxResults: 10,
-          q: searchTerm
+          q: searchTerm,
+          order: 'date'
         }
       })
       setResults(response.data.items)

@@ -26,6 +26,7 @@ const SermonsScreen = () => {
       <SearchBar
         term={term}
         onTermChange={setTerm}
+        onCancel={() => setTerm('')}
         onTermSubmit={() => searchVideos(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}

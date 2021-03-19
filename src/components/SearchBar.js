@@ -1,33 +1,51 @@
 import React from 'react'
 import { Feather } from '@expo/vector-icons'
-import { StyleSheet, TextInput, View } from 'react-native'
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Text,
+  TouchableOpacity
+} from 'react-native'
 
-const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
+const SearchBar = ({ term, onCancel, onTermChange, onTermSubmit }) => {
   return (
     <View style={styles.container}>
-      <Feather name='search' style={styles.icon} />
-      <TextInput
-        autoCapitalize='none'
-        autoCorrect={false}
-        style={styles.textInput}
-        placeholder='Search'
-        value={term}
-        onChangeText={onTermChange}
-        onEndEditing={onTermSubmit}
-      />
+      <View style={styles.searchContainer}>
+        <Feather name='search' style={styles.icon} />
+        <TextInput
+          autoCapitalize='none'
+          autoCorrect={false}
+          style={styles.textInput}
+          placeholder='Search'
+          value={term}
+          onChangeText={onTermChange}
+          // onTextInput={onTermSubmit}
+          onEndEditing={onTermSubmit}
+        />
+      </View>
+      <View style={{ flex: 1 }}>
+        <TouchableOpacity style={styles.cancelButton} onPress={onCancel}>
+          <Text>Cancel</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     marginTop: 20,
-    marginBottom: 8,
+    marginHorizontal: 15,
+    marginBottom: 8
+  },
+  searchContainer: {
     backgroundColor: '#F0EEEE',
     height: 50,
     borderRadius: 10,
-    marginHorizontal: 15,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    flex: 4
   },
   icon: {
     fontSize: 30,
@@ -35,8 +53,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   },
   textInput: {
-    flex: 1,
     fontSize: 18
+  },
+  cancelButton: {
+    height: 50,
+    backgroundColor: '#f0eeee',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginLeft: 5
   }
 })
 

@@ -41,9 +41,6 @@ const VideoScreen = ({ route }) => {
         <WebView
           style={{ resizeMode: 'cover', flex: 1 }}
           allowsFullscreenVideo
-          // scalesPageToFit={true}
-          // allowsInlineMediaPlayback
-          // mediaPlaybackRequiresUserAction
           source={{
             // html: `<iframe width='100%' height='100%' src='https://www.youtube.com/embed/${videoId}?&autoplay=1' frameborder='0' allow='autoplay;' allowfullscreen></iframe>`
             html: html

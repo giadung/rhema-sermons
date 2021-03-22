@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import SearchBar from '../components/SearchBar'
 import HVideosList from '../components/HVideosList'
+import NewVideo from '../components/NewVideo'
+import SearchBar from '../components/SearchBar'
 import VVideosList from '../components/VVideosList'
 import useYouTube from '../hooks/useYouTube'
-import NewVideo from '../components/NewVideo'
 
 const SermonsScreen = ({ navigation }) => {
   // console.log(navigation)
@@ -13,9 +13,7 @@ const SermonsScreen = ({ navigation }) => {
     searchVideos,
     results,
     errorMessage,
-    getPopularVideos,
     popularVideos,
-    getRecentVideos,
     recentVideos
   ] = useYouTube()
 

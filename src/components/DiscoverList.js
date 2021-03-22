@@ -12,17 +12,7 @@ const VList = ({ title, videos, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <FlatList
-        data={videos}
-        keyExtractor={(video) => video.id.videoId}
-        renderItem={({ item }) => {
-          return (
-            <TouchableOpacity onPress={() => console.log('clicked')}>
-              <VVideoDetail video={item} />
-            </TouchableOpacity>
-          )
-        }}
-      />
+      <FlatList />
     </View>
   )
 }

@@ -23,8 +23,8 @@ const SermonsStack = () => {
     <Stack.Navigator
     // screenOptions={screenOptionStyle}
     >
-      <Stack.Screen name='Sermons' component={SermonsScreen} />
-      <Stack.Screen name='Video' component={VideoScreen} />
+      <Stack.Screen name='Video' component={SermonsScreen} />
+      <Stack.Screen name='Video Player' component={VideoScreen} />
     </Stack.Navigator>
   )
 }

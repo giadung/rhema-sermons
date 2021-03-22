@@ -27,7 +27,7 @@ const VideosList = ({ title, videos, navigation }) => {
             <TouchableOpacity
               onPress={
                 () =>
-                  navigation.navigate('Video', {
+                  navigation.navigate('Video Player', {
                     id: item.id.videoId,
                     title: item.snippet.title,
                     publishedAt: item.snippet.publishedAt,

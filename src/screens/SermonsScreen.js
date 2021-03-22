@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import SearchBar from '../components/SearchBar'
 import HVideosList from '../components/HVideosList'
-// import VVideosList from '../components/VVideosList'
+import VVideosList from '../components/VVideosList'
 import useYouTube from '../hooks/useYouTube'
 import NewVideo from '../components/NewVideo'
 

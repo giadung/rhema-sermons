@@ -32,7 +32,7 @@ const VideoScreen = ({ route }) => {
 
   const html =
     '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
-    `<iframe src='https://www.youtube.com/embed/${videoId}?&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
+    `<iframe src='https://www.youtube.com/embed/${videoId}?modestbranding=1&autoplay=1&rel=0' frameborder="0" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
     '</body></html>'
 
   return (

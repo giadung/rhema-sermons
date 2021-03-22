@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 
-import BottomTabNavigator from './src/navigations/TabNavigator'
+import BottomTabNavigator from './src/navigations/BottomTabNavigator'
 
 const App = () => {
   return (

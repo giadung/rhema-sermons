@@ -2,16 +2,18 @@ import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import SermonsScreen from './src/screens/SermonsScreen'
 import VideoScreen from './src/screens/VideoScreen'
+import DiscoveryScreen from './src/screens/DiscoveryScreen'
 
 const navigator = createStackNavigator(
   {
     Sermons: SermonsScreen,
-    Video: VideoScreen
+    Video: VideoScreen,
+    Discovery: DiscoveryScreen
   },
   {
-    initialRouteName: 'Sermons',
+    initialRouteName: 'Discovery',
     defaultNavigationOptions: {
-      title: 'Sermons'
+      title: 'Discovery'
     }
   }
 )

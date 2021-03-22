@@ -9,7 +9,7 @@ const VideoDetail = ({ video }) => {
       <Image
         style={styles.image}
         source={{
-          uri: `https://i.ytimg.com/vi/${video.id.videoId}/mqdefault.jpg`
+          uri: `https://i.ytimg.com/vi/${video.id.videoId}/hqdefault.jpg`
         }}
       />
       <Text numberOfLines={1} style={styles.title}>

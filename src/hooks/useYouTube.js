@@ -108,9 +108,8 @@ export default () => {
   //   }
   // }
 
-  // Call searchVideos when component
+  // Call functions when component
   // is first called.
-  // searchVideos('life') <= BAD CODE!
   useEffect(() => {
     // searchVideos('')
     getPopularVideos()

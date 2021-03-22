@@ -32,7 +32,7 @@ const SermonsScreen = () => {
       {errorMessage ? <Text>{errorMessage}</Text> : null}
 
       {!results || term === '' ? (
-        <ScrollView>
+        <ScrollView nestedScrollEnabled>
           <NewVideo
             videoId='FY2pEqb5GH8'
             title='THE STORM - PART 1 LEARNING THE STORMS'

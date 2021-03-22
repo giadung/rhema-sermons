@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native'
-import { withNavigation } from 'react-navigation'
+// import { withNavigation } from 'react-navigation'
 import VVideoDetail from './VVideoDetail'
 
 const VideosList = ({ title, videos, navigation }) => {
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default withNavigation(VideosList)
+export default VideosList

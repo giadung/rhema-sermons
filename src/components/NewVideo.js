@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   Platform
 } from 'react-native'
-import { withNavigation } from 'react-navigation'
+// import { withNavigation } from 'react-navigation'
+
 import { Video } from 'expo-av'
 import { WebView } from 'react-native-webview'
 
@@ -19,6 +20,7 @@ const NewVideo = ({
   imageUrl,
   navigation
 }) => {
+  // console.log(navigation)
   return (
     <TouchableOpacity
       onPress={() =>
@@ -108,4 +110,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default withNavigation(NewVideo)
+export default NewVideo

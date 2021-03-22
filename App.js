@@ -1,21 +1,13 @@
-import { createAppContainer } from 'react-navigation'
-import { createStackNavigator } from 'react-navigation-stack'
-import SermonsScreen from './src/screens/SermonsScreen'
-import VideoScreen from './src/screens/VideoScreen'
-import DiscoveryScreen from './src/screens/DiscoveryScreen'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 
-const navigator = createStackNavigator(
-  {
-    Sermons: SermonsScreen,
-    Video: VideoScreen,
-    Discovery: DiscoveryScreen
-  },
-  {
-    initialRouteName: 'Discovery',
-    defaultNavigationOptions: {
-      title: 'Discovery'
-    }
-  }
-)
+import BottomTabNavigator from './src/navigations/TabNavigator'
 
-export default createAppContainer(navigator)
+const App = () => {
+  return (
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
+  )
+}
+export default App

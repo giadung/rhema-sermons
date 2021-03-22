@@ -6,10 +6,14 @@ import {
   TouchableOpacity,
   View
 } from 'react-native'
-import { withNavigation } from 'react-navigation'
+// import { withNavigation } from 'react-navigation'
+// import { useNavigation } from '@react-navigation/native'
+
 import HVideoDetail from './HVideoDetail'
 
 const VideosList = ({ title, videos, navigation }) => {
+  // const navigation = useNavigation()
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -55,4 +59,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default withNavigation(VideosList)
+export default VideosList

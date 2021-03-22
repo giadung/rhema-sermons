@@ -11,11 +11,13 @@ import {
 import { ScrollView } from 'react-native-gesture-handler'
 import { WebView } from 'react-native-webview'
 
-const VideoScreen = ({ navigation }) => {
-  const videoId = navigation.getParam('id')
-  const videoTitle = navigation.getParam('title')
-  const publishedAt = navigation.getParam('publishedAt')
-  const videoDescription = navigation.getParam('description')
+const VideoScreen = ({ route }) => {
+  console.log(route)
+
+  const videoId = route.params.id
+  const videoTitle = route.params.title
+  const publishedAt = route.params.publishedAt
+  const videoDescription = route.params.description
 
   // console.log(videoDescription)
 

@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import SearchBar from '../components/SearchBar'
 import HVideosList from '../components/HVideosList'
-import VVideosList from '../components/VVideosList'
+// import VVideosList from '../components/VVideosList'
 import useYouTube from '../hooks/useYouTube'
 import NewVideo from '../components/NewVideo'
 
-const SermonsScreen = () => {
-  // console.log(props)
+const SermonsScreen = ({ navigation }) => {
+  // console.log(navigation)
   const [term, setTerm] = useState('')
   const [
     searchVideos,
@@ -20,6 +20,8 @@ const SermonsScreen = () => {
   ] = useYouTube()
 
   // console.log(popularVideos)
+
+  // const navigation = useNavigation()
 
   return (
     <View style={styles.container}>
@@ -39,13 +41,28 @@ const SermonsScreen = () => {
             description='The Rhema Experience Online'
             publishedAt='2021-03-07'
             imageUrl='https://j.gifs.com/BNz5y2.gif'
+            navigation={navigation}
           />
-          <HVideosList title='Popular Sermons' videos={popularVideos} />
-          <HVideosList title='Recent Sermons' videos={recentVideos} />
+          <HVideosList
+            title='Popular Sermons'
+            videos={popularVideos}
+            navigation={navigation}
+          />
+          <HVideosList
+            title='Recent Sermons'
+            videos={recentVideos}
+            navigation={navigation}
+          />
         </ScrollView>
       ) : (
         <>
-          <VVideosList title='Search Results' videos={results} />
+          {
+            <VVideosList
+              title='Search Results'
+              videos={results}
+              navigation={navigation}
+            />
+          }
         </>
       )}
     </View>

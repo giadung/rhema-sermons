@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import SermonsScreen from '../screens/SermonsScreen'
 import VideoScreen from '../screens/VideoScreen'
-import DiscoverScreen from '../screens/DiscoverScreen'
+import DiscoveryScreen from '../screens/DiscoveryScreen'
 import GivingScreen from '../screens/GivingScreen'
 import LocationScreen from '../screens/LocationScreen'
 import ProfileScreen from '../screens/ProfileScreen'
@@ -29,12 +29,12 @@ const SermonsStack = () => {
   )
 }
 
-const DiscoverStack = () => {
+const DiscoveryStack = () => {
   return (
     <Stack.Navigator
     // screenOptions={screenOptionStyle}
     >
-      <Stack.Screen name='Discover' component={DiscoverScreen} />
+      <Stack.Screen name='Discovery' component={DiscoveryScreen} />
     </Stack.Navigator>
   )
 }
@@ -66,4 +66,10 @@ const ProfileStack = () => {
   )
 }
 
-export { SermonsStack, DiscoverStack, GivingStack, LocationStack, ProfileStack }
+export {
+  SermonsStack,
+  DiscoveryStack,
+  GivingStack,
+  LocationStack,
+  ProfileStack
+}

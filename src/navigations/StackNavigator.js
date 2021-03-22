@@ -3,7 +3,10 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import SermonsScreen from '../screens/SermonsScreen'
 import VideoScreen from '../screens/VideoScreen'
-import DiscoveryScreen from '../screens/DiscoveryScreen'
+import DiscoverScreen from '../screens/DiscoverScreen'
+import GivingScreen from '../screens/GivingScreen'
+import LocationScreen from '../screens/LocationScreen'
+import ProfileScreen from '../screens/ProfileScreen'
 
 const Stack = createStackNavigator()
 
@@ -15,7 +18,7 @@ const Stack = createStackNavigator()
 //   headerBackTitle: 'Back'
 // }
 
-const MainStackNavigator = () => {
+const SermonsStack = () => {
   return (
     <Stack.Navigator
     // screenOptions={screenOptionStyle}
@@ -26,14 +29,41 @@ const MainStackNavigator = () => {
   )
 }
 
-const ContactStackNavigator = () => {
+const DiscoverStack = () => {
   return (
     <Stack.Navigator
     // screenOptions={screenOptionStyle}
     >
-      <Stack.Screen name='Discovery' component={DiscoveryScreen} />
+      <Stack.Screen name='Discover' component={DiscoverScreen} />
+    </Stack.Navigator>
+  )
+}
+const GivingStack = () => {
+  return (
+    <Stack.Navigator
+    // screenOptions={screenOptionStyle}
+    >
+      <Stack.Screen name='Giving' component={GivingScreen} />
+    </Stack.Navigator>
+  )
+}
+const LocationStack = () => {
+  return (
+    <Stack.Navigator
+    // screenOptions={screenOptionStyle}
+    >
+      <Stack.Screen name='Location' component={LocationScreen} />
+    </Stack.Navigator>
+  )
+}
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator
+    // screenOptions={screenOptionStyle}
+    >
+      <Stack.Screen name='Profile' component={ProfileScreen} />
     </Stack.Navigator>
   )
 }
 
-export { MainStackNavigator, ContactStackNavigator }
+export { SermonsStack, DiscoverStack, GivingStack, LocationStack, ProfileStack }

@@ -10,7 +10,6 @@ import {
 import { ScrollView } from 'react-native-gesture-handler'
 import Video from '../components/Video'
 import YoutubePlayer from 'react-native-youtube-iframe'
-import { WebView } from 'react-native-webview'
 
 const LiveScreen = () => {
   return (

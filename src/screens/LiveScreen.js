@@ -108,11 +108,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
+    marginBottom: 2,
     fontWeight: 'bold'
   },
   description: {
     color: 'grey',
-    marginBottom: 80
+    marginBottom: 70
   },
   iconContainer: {
     backgroundColor: '#F6F8FA',

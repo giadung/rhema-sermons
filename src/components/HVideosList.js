@@ -11,7 +11,7 @@ import {
 
 import HVideoDetail from './HVideoDetail'
 
-const VideosList = ({ title, videos, navigation }) => {
+const HVideosList = ({ title, videos, navigation }) => {
   // const navigation = useNavigation()
 
   return (
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default VideosList
+export default HVideosList

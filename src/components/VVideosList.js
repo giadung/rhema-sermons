@@ -9,7 +9,7 @@ import {
 // import { withNavigation } from 'react-navigation'
 import VVideoDetail from './VVideoDetail'
 
-const VideosList = ({ title, videos, navigation }) => {
+const VVideosList = ({ title, videos, navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default VideosList
+export default VVideosList

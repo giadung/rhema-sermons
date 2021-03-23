@@ -2,7 +2,7 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import {
   SermonsStack,
-  DiscoveryStack,
+  DiscoverStack,
   GivingStack,
   LocationStack,
   ProfileStack
@@ -28,7 +28,7 @@ const BottomTabNavigator = () => {
             ) : (
               <Ionicons name='play-circle-outline' size={size} color={color} />
             )
-          } else if (route.name === 'Discovery') {
+          } else if (route.name === 'Discover') {
             icon = focused ? (
               <AntDesign name='appstore1' size={size} color={color} />
             ) : (
@@ -71,7 +71,7 @@ const BottomTabNavigator = () => {
       }}
     >
       <Tab.Screen name='Sermons' component={SermonsStack} />
-      <Tab.Screen name='Discovery' component={DiscoveryStack} />
+      <Tab.Screen name='Discover' component={DiscoverStack} />
       <Tab.Screen name='Giving' component={GivingStack} />
       <Tab.Screen name='Location' component={LocationStack} />
       <Tab.Screen name='Profile' component={ProfileStack} />

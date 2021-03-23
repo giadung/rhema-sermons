@@ -1,49 +1,102 @@
 import React from 'react'
-import { StyleSheet, Image, Text, View } from 'react-native'
+import {
+  Image,
+  Linking,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View
+} from 'react-native'
 
-const VideoDetail = ({}) => {
+const VideoDetail = ({ link, imgUrl, title, description, buttonText }) => {
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: `/#`
-        }}
-      />
-      <Text numberOfLines={1} style={styles.title}>
-        title
-      </Text>
-      {!pastor ? null : (
-        <Text numberOfLines={1} style={styles.description}>
-          description
-        </Text>
-      )}
-    </View>
+    <TouchableHighlight
+      onPress={() => {
+        Linking.openURL(link)
+      }}
+    >
+      <View style={styles.container}>
+        <View style={styles.imgWrapper}>
+          <View style={styles.overColor}>
+            <Text numberOfLines={1} style={styles.title}>
+              {title}
+            </Text>
+          </View>
+          <Image
+            style={styles.image}
+            source={{
+              uri: imgUrl
+            }}
+          />
+        </View>
+        <View style={styles.textWrapper}>
+          <Text numberOfLines={1} style={styles.description}>
+            {description}
+          </Text>
+          <TouchableHighlight>
+            <Text style={styles.buttonText}>{buttonText}</Text>
+          </TouchableHighlight>
+        </View>
+      </View>
+    </TouchableHighlight>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#fff',
     marginHorizontal: 15,
-    marginBottom: 20
+    marginBottom: 20,
+    borderRadius: 20,
+    maxHeight: 300
+  },
+  title: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 25,
+    position: 'absolute',
+    bottom: 15,
+    left: 15
+  },
+  imgWrapper: {
+    width: '100%',
+    height: 175,
+    position: 'relative'
+  },
+  overColor: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: 175,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    zIndex: 3,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    overflow: 'hidden'
   },
   image: {
     width: '100%',
     height: 175,
-    borderRadius: 16,
-    marginBottom: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 50
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    overflow: 'hidden'
   },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 16
+  textWrapper: {
+    position: 'relative',
+    margin: 10
   },
   description: {
     color: 'grey',
-    fontSize: 13
+    fontSize: 13,
+    marginBottom: 10
+  },
+  buttonText: {
+    color: 'tomato',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    marginBottom: 5
   }
 })
 

@@ -9,7 +9,7 @@ const NewVideo = ({
   imageUrl,
   navigation
 }) => {
-  console.log(navigation)
+  // console.log(navigation)
   return (
     <TouchableOpacity
       onPress={() =>

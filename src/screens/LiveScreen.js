@@ -2,21 +2,15 @@ import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import React from 'react'
 import {
   Linking,
-  Platform,
   StyleSheet,
   Text,
   TouchableHighlight,
   View
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import { WebView } from 'react-native-webview'
+import Video from '../components/Video'
 
 const LiveScreen = () => {
-  const html =
-    '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
-    `<iframe src='https://www.youtube.com/embed/FE4p8e6JvZo?modestbranding=1&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; border-radius: 20px; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
-    '</body></html>'
-
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.textContainer}>
@@ -24,25 +18,10 @@ const LiveScreen = () => {
         <Text style={styles.description}>Join us for worship and the...</Text>
       </View>
       <View style={styles.videoContainer}>
-        <WebView
-          style={{ resizeMode: 'cover', flex: 1 }}
-          allowsFullscreenVideo
-          source={{
-            // html: `<iframe width='100%' height='100%' src='https://www.youtube.com/embed/${videoId}?&autoplay=1' frameborder='0' allow='autoplay;' allowfullscreen></iframe>`
-            html: html
-          }}
-          mediaPlaybackRequiresUserAction={
-            Platform.OS !== 'android' || Platform.Version >= 17
-              ? false
-              : undefined
-          }
-          userAgent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-        />
+        {/* <Video videoId='FE4p8e6JvZo' /> */}
       </View>
       <ScrollView>
         <View style={styles.textContainer}>
-          {/* <Text style={styles.title}>Watch On Demand</Text> */}
-          {/* <Text style={styles.description}>Join us for worship and the...</Text> */}
           <View style={styles.buttonWrapper}>
             <View style={styles.button}>
               <TouchableHighlight

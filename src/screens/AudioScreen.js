@@ -15,12 +15,12 @@ const AudioScreen = () => {
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>Watch On Demand</Text>
+        <Text style={styles.title}>Audio On Demand</Text>
         <Text style={styles.description}>Join us for worship and the...</Text>
       </View>
       <View style={styles.videoContainer}>
         {/* <Video videoId='FE4p8e6JvZo' borderRadius='20' /> */}
-        <YoutubePlayer height={220} play={true} videoId={'FE4p8e6JvZo'} />
+        {/* <YoutubePlayer height={220} play={true} videoId={'FE4p8e6JvZo'} /> */}
       </View>
       <ScrollView>
         <View style={styles.textContainer}>

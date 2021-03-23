@@ -19,7 +19,7 @@ const LiveScreen = () => {
         <Text style={styles.description}>Join us for worship and the...</Text>
       </View>
       <View style={styles.videoContainer}>
-        <Video videoId='FE4p8e6JvZo' borderRadius='20' />
+        {/* <Video videoId='FE4p8e6JvZo' borderRadius='20' /> */}
       </View>
       <ScrollView>
         <View style={styles.textContainer}>

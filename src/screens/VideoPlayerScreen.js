@@ -22,7 +22,7 @@ const VideoPlayerScreen = ({ route }) => {
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.videoContainer}>
         {/* <Video videoId={videoId} /> */}
-        {/* <YoutubePlayer height={220} play={true} videoId={videoId} /> */}
+        <YoutubePlayer height={220} play={true} videoId={videoId} />
       </View>
       <ScrollView>
         <View style={styles.textContainer}>

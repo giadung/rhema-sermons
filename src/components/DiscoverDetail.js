@@ -4,13 +4,13 @@ import {
   Linking,
   StyleSheet,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   View
 } from 'react-native'
 
 const VideoDetail = ({ link, imgUrl, title, description, buttonText }) => {
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       onPress={() => {
         Linking.openURL(link)
       }}
@@ -33,12 +33,12 @@ const VideoDetail = ({ link, imgUrl, title, description, buttonText }) => {
           <Text numberOfLines={1} style={styles.description}>
             {description}
           </Text>
-          <TouchableHighlight>
+          <TouchableOpacity>
             <Text style={styles.buttonText}>{buttonText}</Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </View>
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   )
 }
 

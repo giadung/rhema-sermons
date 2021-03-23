@@ -20,12 +20,7 @@ const AudioScreen = () => {
       </View>
       <View style={styles.videoContainer}>
         {/* <Video videoId='FE4p8e6JvZo' borderRadius='20' /> */}
-        {/* <YoutubePlayer
-          height={220}
-          play={true}
-          style={{ borderRadius: 20, overflow: 'hidden' }}
-          videoId={'FE4p8e6JvZo'}
-        /> */}
+        <YoutubePlayer height={220} play={true} videoId={'FE4p8e6JvZo'} />
       </View>
       <ScrollView>
         <View style={styles.textContainer}>

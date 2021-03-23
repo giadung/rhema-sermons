@@ -1,16 +1,5 @@
 import React from 'react'
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  Platform
-} from 'react-native'
-// import { withNavigation } from 'react-navigation'
-
-import { Video } from 'expo-av'
-import { WebView } from 'react-native-webview'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 
 const NewVideo = ({
   videoId,
@@ -20,7 +9,7 @@ const NewVideo = ({
   imageUrl,
   navigation
 }) => {
-  // console.log(navigation)
+  console.log(navigation)
   return (
     <TouchableOpacity
       onPress={() =>

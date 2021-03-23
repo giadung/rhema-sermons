@@ -2,8 +2,6 @@ import React from 'react'
 import { StyleSheet, Image, Text, View } from 'react-native'
 
 const VideoDetail = ({ video }) => {
-  const pastor = video.snippet.description.split('\n')[0]
-
   return (
     <View style={styles.container}>
       <Image
@@ -17,7 +15,7 @@ const VideoDetail = ({ video }) => {
       </Text>
       {!pastor ? null : (
         <Text numberOfLines={1} style={styles.description}>
-          {pastor}
+          {video.snippet.description.split('\n')[0]}
         </Text>
       )}
     </View>

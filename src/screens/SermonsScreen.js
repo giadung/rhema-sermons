@@ -1,79 +1,25 @@
-import React, { useState } from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import SearchBar from '../components/SearchBar'
-import HVideosList from '../components/HVideosList'
-import VVideosList from '../components/VVideosList'
-import useYouTube from '../hooks/useYouTube'
-import NewVideo from '../components/NewVideo'
+import React from 'react'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
-const SermonsScreen = ({ navigation }) => {
-  // console.log(navigation)
-  const [term, setTerm] = useState('')
-  const [
-    searchVideos,
-    results,
-    errorMessage,
-    getPopularVideos,
-    popularVideos,
-    getRecentVideos,
-    recentVideos
-  ] = useYouTube()
+import VideoScreen from '../screens/VideoScreen'
+import AudioScreen from '../screens/AudioScreen'
+import LiveScreen from '../screens/LiveScreen'
 
-  // console.log(popularVideos)
+const Tab = createMaterialTopTabNavigator()
 
-  // const navigation = useNavigation()
-
+const SermonsScreen = () => {
   return (
-    <View style={styles.container}>
-      <SearchBar
-        term={term}
-        onTermChange={setTerm}
-        onCancel={() => setTerm('')}
-        onTermSubmit={() => searchVideos(term)}
-      />
-      {errorMessage ? <Text>{errorMessage}</Text> : null}
-
-      {!results || term === '' ? (
-        <ScrollView nestedScrollEnabled>
-          <NewVideo
-            videoId='FY2pEqb5GH8'
-            title='THE STORM - PART 1 LEARNING THE STORMS'
-            description='The Rhema Experience Online'
-            publishedAt='2021-03-07'
-            imageUrl='https://j.gifs.com/BNz5y2.gif'
-            navigation={navigation}
-          />
-          <HVideosList
-            title='Popular Sermons'
-            videos={popularVideos}
-            navigation={navigation}
-          />
-          <HVideosList
-            title='Recent Sermons'
-            videos={recentVideos}
-            navigation={navigation}
-          />
-        </ScrollView>
-      ) : (
-        <>
-          {
-            <VVideosList
-              title='Search Results'
-              videos={results}
-              navigation={navigation}
-            />
-          }
-        </>
-      )}
-    </View>
+    <Tab.Navigator
+      tabBarOptions={{
+        indicatorStyle: { backgroundColor: 'black' },
+        style: { paddingTop: 25 }
+      }}
+    >
+      <Tab.Screen name='Video' component={VideoScreen} />
+      <Tab.Screen name='Audio' component={AudioScreen} />
+      <Tab.Screen name='Live' component={LiveScreen} />
+    </Tab.Navigator>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#FFF',
-    flex: 1
-  }
-})
 
 export default SermonsScreen

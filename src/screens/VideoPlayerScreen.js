@@ -11,18 +11,32 @@ import {
 import { ScrollView } from 'react-native-gesture-handler'
 import { WebView } from 'react-native-webview'
 
-const LiveScreen = () => {
+const VideoPlayerScreen = ({ route }) => {
+  // console.log(route)
+
+  const videoId = route.params.id
+  const videoTitle = route.params.title
+  const publishedAt = route.params.publishedAt
+  const videoDescription = route.params.description
+
+  // console.log(videoDescription)
+
+  const publishedDate = publishedAt.substring(0, 10)
+
+  // const html =
+  //   '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
+  //   '<div style="display: flex; justify-content: center; align-items: center; height: 100%"><div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">' +
+  //   `<iframe width="560" height="315" src='https://www.youtube.com/embed/${videoId}?&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
+  //   '</div></div>' +
+  //   '</body></html>'
+
   const html =
     '<html><body><meta name="viewport" content="device-width, initial-scale=1, maximum-scale=1.0, user-scalable=1.0">' +
-    `<iframe src='https://www.youtube.com/embed/FE4p8e6JvZo?modestbranding=1&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; border-radius: 20px; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
+    `<iframe src='https://www.youtube.com/embed/${videoId}?modestbranding=1&autoplay=1' frameborder="0" style="position:absolute; width: 100%; height: 100%; left: 0; top: 0" allow="autoplay; encrypted-media" allowfullscreen></iframe>` +
     '</body></html>'
 
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>Watch On Demand</Text>
-        <Text style={styles.description}>Join us for worship and the...</Text>
-      </View>
       <View style={styles.videoContainer}>
         <WebView
           style={{ resizeMode: 'cover', flex: 1 }}
@@ -41,8 +55,9 @@ const LiveScreen = () => {
       </View>
       <ScrollView>
         <View style={styles.textContainer}>
-          {/* <Text style={styles.title}>Watch On Demand</Text> */}
-          {/* <Text style={styles.description}>Join us for worship and the...</Text> */}
+          <Text style={styles.title}>{videoTitle}</Text>
+          <Text style={styles.date}>Published on: {publishedDate}</Text>
+          <Text style={styles.description}>{videoDescription}</Text>
           <View style={styles.buttonWrapper}>
             <View style={styles.button}>
               <TouchableHighlight
@@ -87,8 +102,6 @@ const LiveScreen = () => {
               <Text style={styles.buttonText}>Share</Text>
             </View>
           </View>
-          <Text style={styles.title}>Schedule</Text>
-          <Text style={styles.description}>Weekly on Sunday and Wednesday</Text>
         </View>
       </ScrollView>
     </View>
@@ -97,22 +110,25 @@ const LiveScreen = () => {
 
 const styles = StyleSheet.create({
   videoContainer: {
-    height: 220,
-    marginHorizontal: 15,
-    borderRadius: 20
+    height: 220
   },
   textContainer: {
-    marginTop: 20,
+    marginTop: 25,
     marginHorizontal: 25,
     flex: 1
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 5
+  },
+  date: {
+    color: 'grey',
+    marginBottom: 15
   },
   description: {
     color: 'grey',
-    marginBottom: 80
+    marginBottom: 25
   },
   iconContainer: {
     backgroundColor: '#F6F8FA',
@@ -129,7 +145,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'space-between',
     marginHorizontal: 25,
-    marginBottom: 30
+    marginBottom: 50
   },
   button: {
     alignItems: 'center'
@@ -141,4 +157,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default LiveScreen
+export default VideoPlayerScreen

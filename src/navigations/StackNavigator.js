@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import SermonsScreen from '../screens/SermonsScreen'
-import VideoScreen from '../screens/VideoScreen'
+import VideoPlayerScreen from '../screens/VideoPlayerScreen'
 import DiscoveryScreen from '../screens/DiscoveryScreen'
 import GivingScreen from '../screens/GivingScreen'
 import LocationScreen from '../screens/LocationScreen'
@@ -23,8 +23,12 @@ const SermonsStack = () => {
     <Stack.Navigator
     // screenOptions={screenOptionStyle}
     >
-      <Stack.Screen name='Video' component={SermonsScreen} />
-      <Stack.Screen name='Video Player' component={VideoScreen} />
+      <Stack.Screen
+        name='Sermons'
+        component={SermonsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name='Video Player' component={VideoPlayerScreen} />
     </Stack.Navigator>
   )
 }
@@ -38,6 +42,7 @@ const DiscoveryStack = () => {
     </Stack.Navigator>
   )
 }
+
 const GivingStack = () => {
   return (
     <Stack.Navigator
@@ -47,6 +52,7 @@ const GivingStack = () => {
     </Stack.Navigator>
   )
 }
+
 const LocationStack = () => {
   return (
     <Stack.Navigator
@@ -56,6 +62,7 @@ const LocationStack = () => {
     </Stack.Navigator>
   )
 }
+
 const ProfileStack = () => {
   return (
     <Stack.Navigator

@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Video from '../components/Video'
+import YoutubePlayer from 'react-native-youtube-iframe'
 
 const LiveScreen = () => {
   return (
@@ -18,7 +19,7 @@ const LiveScreen = () => {
         <Text style={styles.description}>Join us for worship and the...</Text>
       </View>
       <View style={styles.videoContainer}>
-        {/* <Video videoId='FE4p8e6JvZo' /> */}
+        <Video videoId='FE4p8e6JvZo' borderRadius='20' />
       </View>
       <ScrollView>
         <View style={styles.textContainer}>

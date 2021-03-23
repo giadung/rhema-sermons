@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Video from '../components/Video'
+import YoutubePlayer from 'react-native-youtube-iframe'
 
 const VideoPlayerScreen = ({ route }) => {
   const videoId = route.params.id
@@ -20,7 +21,8 @@ const VideoPlayerScreen = ({ route }) => {
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.videoContainer}>
-        <Video videoId={videoId} />
+        {/* <Video videoId={videoId} /> */}
+        <YoutubePlayer height={220} play={true} videoId={videoId} />
       </View>
       <ScrollView>
         <View style={styles.textContainer}>

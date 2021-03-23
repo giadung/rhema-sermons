@@ -1,5 +1,6 @@
 import React from 'react'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import { Platform, StatusBar } from 'react-native'
 
 import VideoScreen from '../screens/VideoScreen'
 import AudioScreen from '../screens/AudioScreen'
@@ -13,7 +14,9 @@ const SermonsScreen = () => {
     <Tab.Navigator
       tabBarOptions={{
         indicatorStyle: { backgroundColor: 'black' },
-        style: { paddingTop: 25 }
+        style: {
+          paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+        }
       }}
     >
       <Tab.Screen name='Video' component={VideoScreen} />

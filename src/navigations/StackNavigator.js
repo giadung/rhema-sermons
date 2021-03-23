@@ -28,7 +28,11 @@ const SermonsStack = () => {
         component={SermonsScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name='Video Player' component={VideoPlayerScreen} />
+      <Stack.Screen
+        name='Video Player'
+        component={VideoPlayerScreen}
+        screenOptions={{ animationEnabled: false }}
+      />
     </Stack.Navigator>
   )
 }

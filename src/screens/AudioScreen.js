@@ -15,7 +15,7 @@ const AudioScreen = () => {
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>Audio On Demand</Text>
+        <Text style={styles.title}>Watch On Demand</Text>
         <Text style={styles.description}>Join us for worship and the...</Text>
       </View>
       <View style={styles.videoContainer}>

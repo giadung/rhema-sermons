@@ -9,7 +9,8 @@ const Video = ({ videoId, borderRadius }) => {
     '</body></html>'
   return (
     <WebView
-      // style={{ resizeMode: 'cover', flex: 1 }}
+      style={{ resizeMode: 'cover', flex: 1 }}
+      // androidHardwareAccelerationDisabled={true}
       allowsFullscreenVideo
       source={{ html: html }}
       mediaPlaybackRequiresUserAction={

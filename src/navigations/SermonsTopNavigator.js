@@ -2,9 +2,9 @@ import React from 'react'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import { Platform, StatusBar } from 'react-native'
 
-import VideoScreen from './VideoScreen'
-import AudioScreen from './AudioScreen'
-import LiveScreen from './LiveScreen'
+import VideoScreen from '../screens/sermons/VideoScreen'
+import AudioScreen from '../screens/sermons/AudioScreen'
+import LiveScreen from '../screens/sermons/LiveScreen'
 
 const Tab = createMaterialTopTabNavigator()
 

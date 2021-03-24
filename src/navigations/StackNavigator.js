@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import SermonsScreen from '../screens/sermons/SermonsScreen'
+import SermonsTopNavigator from './SermonsTopNavigator'
 import VideoPlayerScreen from '../screens/sermons/VideoPlayerScreen'
 import DiscoverScreen from '../screens/DiscoverScreen'
 import GivingScreen from '../screens/GivingScreen'
@@ -25,7 +25,7 @@ const SermonsStack = () => {
     >
       <Stack.Screen
         name='Sermons'
-        component={SermonsScreen}
+        component={SermonsTopNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen

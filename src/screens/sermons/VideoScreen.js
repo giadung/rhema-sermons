@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import SearchBar from '../components/SearchBar'
-import VideoList from '../components/VideosList'
-import useYouTube from '../hooks/useYouTube'
-import NewVideo from '../components/NewVideo'
+import SearchBar from '../../components/common/SearchBar'
+import VideoList from '../../components/VideosList'
+import useYouTube from '../../hooks/useYouTube'
+import NewVideo from '../../components/NewVideo'
 
 const VideoScreen = ({ navigation }) => {
   // console.log(navigation)

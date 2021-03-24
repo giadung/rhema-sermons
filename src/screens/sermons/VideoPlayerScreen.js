@@ -4,11 +4,11 @@ import {
   Linking,
   StyleSheet,
   Text,
-  TouchableHighlight,
+  TouchableOpacity,
   View
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Video from '../components/Video'
+import Video from '../../components/common/Video'
 import YoutubePlayer from 'react-native-youtube-iframe'
 
 const VideoPlayerScreen = ({ route }) => {
@@ -36,7 +36,7 @@ const VideoPlayerScreen = ({ route }) => {
           <Text style={styles.description}>{videoDescription}</Text>
           <View style={styles.buttonWrapper}>
             <View style={styles.button}>
-              <TouchableHighlight
+              <TouchableOpacity
                 style={styles.iconContainer}
                 onPress={() => {
                   Linking.openURL('https://google.com')
@@ -48,22 +48,22 @@ const VideoPlayerScreen = ({ route }) => {
                   size={24}
                   color='black'
                 />
-              </TouchableHighlight>
+              </TouchableOpacity>
               <Text style={styles.buttonText}>Subcribe</Text>
             </View>
             <View style={styles.button}>
-              <TouchableHighlight
+              <TouchableOpacity
                 style={styles.iconContainer}
                 onPress={() => {
                   Linking.openURL('https://google.com')
                 }}
               >
                 <Feather name='play' size={24} color='black' />
-              </TouchableHighlight>
+              </TouchableOpacity>
               <Text style={styles.buttonText}>Listen</Text>
             </View>
             <View style={styles.button}>
-              <TouchableHighlight
+              <TouchableOpacity
                 style={styles.iconContainer}
                 onPress={() => {
                   Linking.openURL('https://google.com')
@@ -74,7 +74,7 @@ const VideoPlayerScreen = ({ route }) => {
                   size={24}
                   color='black'
                 />
-              </TouchableHighlight>
+              </TouchableOpacity>
               <Text style={styles.buttonText}>Share</Text>
             </View>
           </View>

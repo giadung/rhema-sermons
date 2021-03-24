@@ -8,24 +8,19 @@ import {
   View
 } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Video from '../components/Video'
+import Video from '../../components/common/Video'
 import YoutubePlayer from 'react-native-youtube-iframe'
 
-const LiveScreen = () => {
+const AudioScreen = () => {
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.textContainer}>
-        <Text style={styles.title}>Watch On Demand</Text>
+        <Text style={styles.title}>Audio On Demand</Text>
         <Text style={styles.description}>Join us for worship and the...</Text>
       </View>
       <View style={styles.videoContainer}>
-        <Video videoId='FE4p8e6JvZo' borderRadius='20' />
-        {/* <YoutubePlayer
-          androidHardwareAccelerationDisabled={true}
-          height={220}
-          play={true}
-          videoId={'FE4p8e6JvZo'}
-        /> */}
+        {/* <Video videoId='FE4p8e6JvZo' borderRadius='20' /> */}
+        {/* <YoutubePlayer height={220} play={true} videoId={'FE4p8e6JvZo'} /> */}
       </View>
       <ScrollView>
         <View style={styles.textContainer}>
@@ -128,4 +123,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default LiveScreen
+export default AudioScreen

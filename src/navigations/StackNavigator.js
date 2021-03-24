@@ -1,8 +1,8 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import SermonsScreen from '../screens/SermonsScreen'
-import VideoPlayerScreen from '../screens/VideoPlayerScreen'
+import SermonsScreen from '../screens/sermons/SermonsScreen'
+import VideoPlayerScreen from '../screens/sermons/VideoPlayerScreen'
 import DiscoverScreen from '../screens/DiscoverScreen'
 import GivingScreen from '../screens/GivingScreen'
 import LocationScreen from '../screens/LocationScreen'

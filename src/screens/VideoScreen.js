@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import SearchBar from '../components/SearchBar'
-import HVideosList from '../components/HVideosList'
-import VVideosList from '../components/VVideosList'
+import VideoList from '../components/VideosList'
 import useYouTube from '../hooks/useYouTube'
 import NewVideo from '../components/NewVideo'
 
@@ -43,12 +42,14 @@ const VideoScreen = ({ navigation }) => {
             imageUrl='https://j.gifs.com/BNz5y2.gif'
             navigation={navigation}
           />
-          <HVideosList
+          <VideoList
+            horizontal={true}
             title='Popular Sermons'
             videos={popularVideos}
             navigation={navigation}
           />
-          <HVideosList
+          <VideoList
+            horizontal={true}
             title='Recent Sermons'
             videos={recentVideos}
             navigation={navigation}
@@ -57,7 +58,8 @@ const VideoScreen = ({ navigation }) => {
       ) : (
         <>
           {
-            <VVideosList
+            <VideoList
+              horizontal={false}
               title='Search Results'
               videos={results}
               navigation={navigation}

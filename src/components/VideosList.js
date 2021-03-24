@@ -9,17 +9,17 @@ import {
 // import { withNavigation } from 'react-navigation'
 // import { useNavigation } from '@react-navigation/native'
 
-import HVideoDetail from './HVideoDetail'
+import VideoDetail from './VideoDetail'
 
-const HVideosList = ({ title, videos, navigation }) => {
+const VideoList = ({ horizontal, title, videos, navigation }) => {
   // const navigation = useNavigation()
 
   return (
-    <View style={styles.container}>
+    <View style={[horizontal ? styles.containerH : styles.containerV]}>
       <Text style={styles.title}>{title}</Text>
       <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
+        horizontal={horizontal}
+        showsHorizontalScrollIndicator={!horizontal}
         data={videos}
         keyExtractor={(video) => video.id.videoId}
         renderItem={({ item }) => {
@@ -36,7 +36,7 @@ const HVideosList = ({ title, videos, navigation }) => {
                 // console.log(item.snippet.publishedAt)
               }
             >
-              <HVideoDetail video={item} />
+              <VideoDetail horizontal={horizontal} video={item} />
             </TouchableOpacity>
           )
         }}
@@ -46,9 +46,12 @@ const HVideosList = ({ title, videos, navigation }) => {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerH: {
     flex: 1,
     marginBottom: 20
+  },
+  containerV: {
+    flex: 1
   },
   title: {
     marginLeft: 15,
@@ -59,4 +62,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default HVideosList
+export default VideoList

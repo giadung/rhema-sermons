@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   },
   textInput: {
-    fontSize: 18
+    fontSize: 18,
+    flex: 1
   },
   cancelButton: {
     height: 50,

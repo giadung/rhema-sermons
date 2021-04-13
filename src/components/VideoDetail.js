@@ -15,7 +15,7 @@ const VideoDetail = ({ horizontal, video }) => {
       <Text numberOfLines={1} style={styles.title}>
         {video.snippet.title}
       </Text>
-      {!description ? null : (
+      {description && (
         <Text numberOfLines={1} style={styles.description}>
           {description}
         </Text>

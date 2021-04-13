@@ -14,7 +14,7 @@ const SermonsScreen = () => {
       tabBarOptions={{
         indicatorStyle: { backgroundColor: 'black' },
         style: {
-          paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+          paddingTop: StatusBar.currentHeight
         }
       }}
     >

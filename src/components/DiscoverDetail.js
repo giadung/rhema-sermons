@@ -30,9 +30,11 @@ const VideoDetail = ({ link, imgUrl, title, description, buttonText }) => {
           />
         </View>
         <View style={styles.textWrapper}>
-          <Text numberOfLines={1} style={styles.description}>
-            {description}
-          </Text>
+          {description && (
+            <Text numberOfLines={4} style={styles.description}>
+              {description}
+            </Text>
+          )}
           <TouchableOpacity>
             <Text style={styles.buttonText}>{buttonText}</Text>
           </TouchableOpacity>
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     left: 0,
     width: '100%',
     height: 175,
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.25)',
     zIndex: 3,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,

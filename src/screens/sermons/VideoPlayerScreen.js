@@ -1,15 +1,8 @@
-import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import React from 'react'
-import {
-  Linking,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import Video from '../../components/common/Video'
 import YoutubePlayer from 'react-native-youtube-iframe'
+import SubscribeShareButtons from '../../components/common/SubscribeShareButtons'
 
 const VideoPlayerScreen = ({ route }) => {
   const videoId = route.params.id
@@ -21,7 +14,6 @@ const VideoPlayerScreen = ({ route }) => {
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.videoContainer}>
-        {/* <Video videoId={videoId} /> */}
         <YoutubePlayer
           style={{ opacity: 0.99, overflow: 'hidden' }}
           height={220}
@@ -34,51 +26,8 @@ const VideoPlayerScreen = ({ route }) => {
           <Text style={styles.title}>{videoTitle}</Text>
           <Text style={styles.date}>Published on: {publishedDate}</Text>
           <Text style={styles.description}>{videoDescription}</Text>
-          <View style={styles.buttonWrapper}>
-            <View style={styles.button}>
-              <TouchableOpacity
-                style={styles.iconContainer}
-                onPress={() => {
-                  Linking.openURL('https://google.com')
-                }}
-              >
-                <Ionicons
-                  style={styles.icon}
-                  name='notifications-outline'
-                  size={24}
-                  color='black'
-                />
-              </TouchableOpacity>
-              <Text style={styles.buttonText}>Subcribe</Text>
-            </View>
-            <View style={styles.button}>
-              <TouchableOpacity
-                style={styles.iconContainer}
-                onPress={() => {
-                  Linking.openURL('https://google.com')
-                }}
-              >
-                <Feather name='play' size={24} color='black' />
-              </TouchableOpacity>
-              <Text style={styles.buttonText}>Listen</Text>
-            </View>
-            <View style={styles.button}>
-              <TouchableOpacity
-                style={styles.iconContainer}
-                onPress={() => {
-                  Linking.openURL('https://google.com')
-                }}
-              >
-                <MaterialCommunityIcons
-                  name='share-outline'
-                  size={24}
-                  color='black'
-                />
-              </TouchableOpacity>
-              <Text style={styles.buttonText}>Share</Text>
-            </View>
-          </View>
         </View>
+        <SubscribeShareButtons />
       </ScrollView>
     </View>
   )
@@ -104,32 +53,7 @@ const styles = StyleSheet.create({
   },
   description: {
     color: 'grey',
-    marginBottom: 25
-  },
-  iconContainer: {
-    backgroundColor: '#F6F8FA',
-    width: 50,
-    height: 50,
-    borderRadius: 100,
-    marginBottom: 5,
-    alignItems: 'center',
-    justifyContent: 'space-around'
-  },
-  buttonWrapper: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    marginHorizontal: 25,
-    marginBottom: 50
-  },
-  button: {
-    alignItems: 'center'
-  },
-  buttonText: {
-    fontSize: 13,
-    color: '#000',
-    fontWeight: 'bold'
+    marginBottom: 15
   }
 })
 

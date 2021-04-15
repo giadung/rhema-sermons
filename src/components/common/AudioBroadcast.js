@@ -2,7 +2,7 @@ import React from 'react'
 import { Platform } from 'react-native'
 import { WebView } from 'react-native-webview'
 
-const AudioBC = () => {
+const AudioBroadcast = () => {
   const html =
     '<html><body><meta name="viewport" content="device-width, initial-scale=1, user-scalable=1.0">' +
     `<iframe src="https://open.spotify.com/embed-podcast/show/5hPhbj8qFlOeYWnmHxijxa" width="100%" height="100%" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> ` +
@@ -24,4 +24,4 @@ const AudioBC = () => {
   )
 }
 
-export default AudioBC
+export default AudioBroadcast

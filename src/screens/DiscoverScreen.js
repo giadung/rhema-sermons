@@ -1,12 +1,12 @@
 import React from 'react'
 import {
+  Platform,
   SafeAreaView,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
-  View,
-  Platform,
-  StatusBar
+  View
 } from 'react-native'
 import DiscoverDetail from '../components/DiscoverDetail'
 

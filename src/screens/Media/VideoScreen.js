@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import SearchBar from '../../components/common/SearchBar'
-import NewVideo from '../../components/NewVideo'
-import VideoList from '../../components/VideosList'
-import useYouTube from '../../hooks/useYouTube'
+import React, { useState } from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import SearchBar from "../../components/common/SearchBar";
+import NewVideo from "../../components/NewVideo";
+import VideoList from "../../components/VideosList";
+import useYouTube from "../../hooks/useYouTube";
+import recentVideos from "../../data/recentVideos";
+import popularVideos from "../../data/popularVideos";
 
 const VideoScreen = ({ navigation }) => {
   // console.log(navigation)
-  const [term, setTerm] = useState('')
+  const [term, setTerm] = useState("");
   const [
     searchVideos,
     results,
     errorMessage,
     getPopularVideos,
-    popularVideos,
     getRecentVideos,
-    recentVideos
-  ] = useYouTube()
+  ] = useYouTube();
 
   // console.log(popularVideos)
 
@@ -27,30 +27,30 @@ const VideoScreen = ({ navigation }) => {
       <SearchBar
         term={term}
         onTermChange={setTerm}
-        onCancel={() => setTerm('')}
+        onCancel={() => setTerm("")}
         onTermSubmit={() => searchVideos(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
 
-      {!results || term === '' ? (
+      {!results || term === "" ? (
         <ScrollView nestedScrollEnabled>
           <NewVideo
-            videoId='FY2pEqb5GH8'
-            title='THE STORM - PART 1 LEARNING THE STORMS'
-            description='The Rhema Experience Online'
-            publishedAt='2021-03-07'
-            imageUrl='https://j.gifs.com/BNz5y2.gif'
+            videoId={recentVideos[0].id.videoId}
+            title={recentVideos[0].snippet.title}
+            // description="The Rhema Experience Online"
+            publishedAt={recentVideos[0].snippet.publishedAt}
+            imageUrl={`https://i.ytimg.com/vi/${recentVideos[0].id.videoId}/hqdefault.jpg`}
             navigation={navigation}
           />
           <VideoList
             horizontal={true}
-            title='Popular Sermons'
+            title="Popular Sermons"
             videos={popularVideos}
             navigation={navigation}
           />
           <VideoList
             horizontal={true}
-            title='Recent Sermons'
+            title="Recent Sermons"
             videos={recentVideos}
             navigation={navigation}
           />
@@ -60,7 +60,7 @@ const VideoScreen = ({ navigation }) => {
           {
             <VideoList
               horizontal={false}
-              title='Search Results'
+              title="Search Results"
               videos={results}
               navigation={navigation}
             />
@@ -68,14 +68,14 @@ const VideoScreen = ({ navigation }) => {
         </>
       )}
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF',
-    flex: 1
-  }
-})
+    backgroundColor: "#FFF",
+    flex: 1,
+  },
+});
 
-export default VideoScreen
+export default VideoScreen;
